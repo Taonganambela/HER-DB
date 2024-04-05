@@ -1,6 +1,6 @@
 import React from "react";
 import GridViewIcon from "@mui/icons-material/GridView";
-
+import CampaignOutlinedIcon from "@mui/icons-material/CampaignOutlined";
 import { Link } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
@@ -9,12 +9,11 @@ import { IconButton, TextField } from "@mui/material";
 import SidebarItem from "../components/SidebarItem";
 import BackgroundLetterAvatars from "../components/Avatar";
 import ThemeSwitcher from "../components/ThemeSwitcher";
-import DescriptionIcon from '@mui/icons-material/Description';
-import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
-import GroupsIcon from '@mui/icons-material/Groups';
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import PersonRemoveAlt1Icon from '@mui/icons-material/PersonRemoveAlt1';
-
+import DescriptionIcon from "@mui/icons-material/Description";
+import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
+import GroupsIcon from "@mui/icons-material/Groups";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import PersonRemoveAlt1Icon from "@mui/icons-material/PersonRemoveAlt1";
 
 type DashboardLayoutProps = {
   Component: React.ComponentType;
@@ -53,14 +52,14 @@ function DashboardLayout({ Component }: DashboardLayoutProps) {
         <Link to="/employees">
           <SidebarItem Icon={GroupsIcon} text="employees" />
         </Link>
-        <Link to="/departments">
-          <SidebarItem
-            Icon={AccountTreeIcon}
-            text="departments"
-          />
+
+        <Link to="/announcements">
+          <SidebarItem Icon={CampaignOutlinedIcon} text="announcements" />
         </Link>
 
-     
+        <Link to="/departments">
+          <SidebarItem Icon={AccountTreeIcon} text="departments" />
+        </Link>
 
         <div className="p-2 rounded-md space-x-4 flex items-center justify-center absolute bottom-2 bg-green-700 w-56">
           <LogoutIcon className="text-white  dark:text-content" />
@@ -85,13 +84,17 @@ function DashboardLayout({ Component }: DashboardLayoutProps) {
 
           <div className="flex items-center">
             <ThemeSwitcher />
-                <div className="flex space-x-2 ml-4 items-center mr-4">
-                    <BackgroundLetterAvatars name="Nahshon Kampamba" size={56} />
-                    <div className="flex flex-col">
-                        <h2 className="font-semibold text-bkg dark:text-content">Nahshon Kampamba</h2>
-                        <h3 className="text-gray-600 dark:text-gray-400">Software Developer</h3>
-                    </div>
-                </div>
+            <div className="flex space-x-2 ml-4 items-center mr-4">
+              <BackgroundLetterAvatars name="Nahshon Kampamba" size={56} />
+              <div className="flex flex-col">
+                <h2 className="font-semibold text-bkg dark:text-content">
+                  Nahshon Kampamba
+                </h2>
+                <h3 className="text-gray-600 dark:text-gray-400">
+                  Software Developer
+                </h3>
+              </div>
+            </div>
           </div>
         </div>
         <div className="h-screen overflow-y-scroll pb-20 bg-gray-100">

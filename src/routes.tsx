@@ -12,6 +12,8 @@ import Employee from "./pages/Employee";
 import Department from "./pages/Department";
 import RequisitionDetails from "./pages/RequisitionDetails";
 import Test from "./pages/Test";
+import Announcement from "./pages/Announcement";
+import AnnouncementCreation from "./pages/AnnouncementCreation";
 
 
 
@@ -56,10 +58,18 @@ export const router = createBrowserRouter([
         path: "/departments",
         element: <DashboardLayout Component={Department} />,
     },
+    {
+        path: "/announcements",
+        element: <DashboardLayout Component={Announcement} />,
+    },
+    {
+        path: "/announcementCreation",
+        element: <DashboardLayout Component={AnnouncementCreation} />,
+    },
 
     {
         path: "/test",
         element: <Test />,
-    },
+    }
    
 ])
