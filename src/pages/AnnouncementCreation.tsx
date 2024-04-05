@@ -17,7 +17,7 @@ function AnnouncementCreation() {
           <div className="flex-[0.25] text-left py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 mt-4">
             <label
               htmlFor="countries"
-              className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+              className="block mb-2 text-xl font-medium text-gray-900 dark:text-white"
             >
               Department intended to send to:
             </label>
@@ -39,7 +39,7 @@ function AnnouncementCreation() {
             <div className="flex-[0.25] text-left py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 mt-4">
               <label
                 htmlFor="countries"
-                className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-xl font-medium text-gray-900 dark:text-white"
               >
                 Section intended to send to:
               </label>
@@ -61,7 +61,7 @@ function AnnouncementCreation() {
         <div className=" dark:bg-slate-900 text-center rounded-b-lg ">
           <label
             htmlFor="countries"
-            className="block mb-2 text-md font-medium text-gray-900 dark:text-white pl-4 ml-64 text-left "
+            className="block mb-2 text-xl font-medium text-gray-900 dark:text-white pl-4 ml-64 text-left "
           >
             Enter Message
           </label>
