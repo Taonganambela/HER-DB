@@ -1,6 +1,4 @@
-import {
-    createBrowserRouter,
-} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Login from "./pages/Login";
 import DashboardLayout from "./pages/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
@@ -14,62 +12,60 @@ import RequisitionDetails from "./pages/RequisitionDetails";
 import Test from "./pages/Test";
 import Announcement from "./pages/Announcement";
 import AnnouncementCreation from "./pages/AnnouncementCreation";
-
-
+import EmployeeCreation from "./pages/EmployeeCreation";
 
 export const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Login />,
-    },
-    {
-        path: "/dashboard",
-        element: <DashboardLayout Component={Dashboard} />,
-    },
-    {
-        path: "/notifications",
-        element: <DashboardLayout Component={Notifications} />,
-    },
+  {
+    path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout Component={Dashboard} />,
+  },
+  {
+    path: "/notifications",
+    element: <DashboardLayout Component={Notifications} />,
+  },
 
-    {
-        path: "/requisitions",
-        element: <DashboardLayout Component={Requisitions} />,
-    },
-    {
-        path: "/requisition-details",
-        element: <DashboardLayout Component={RequisitionDetails} />,
-    },
-    {
-        path: "/onboarding",
-        element: <DashboardLayout Component={Onboarding} />,
-    },
+  {
+    path: "/requisitions",
+    element: <DashboardLayout Component={Requisitions} />,
+  },
+  {
+    path: "/requisition-details",
+    element: <DashboardLayout Component={RequisitionDetails} />,
+  },
+  {
+    path: "/onboarding",
+    element: <DashboardLayout Component={Onboarding} />,
+  },
 
-    {
-        path: "/offboarding",
-        element: <DashboardLayout Component={Offboarding} />,
-    },
+  {
+    path: "/offboarding",
+    element: <DashboardLayout Component={Offboarding} />,
+  },
 
-    {
-        path: "/employees",
-        element: <DashboardLayout Component={Employee} />,
-    },
+  {
+    path: "/employees",
+    element: <DashboardLayout Component={Employee} />,
+  },
 
-    {
-        path: "/departments",
-        element: <DashboardLayout Component={Department} />,
-    },
-    {
-        path: "/announcements",
-        element: <DashboardLayout Component={Announcement} />,
-    },
-    {
-        path: "/announcementCreation",
-        element: <DashboardLayout Component={AnnouncementCreation} />,
-    },
-
-    {
-        path: "/test",
-        element: <Test />,
-    }
-   
-])
+  {
+    path: "/departments",
+    element: <DashboardLayout Component={Department} />,
+  },
+  {
+    path: "/announcements",
+    element: <DashboardLayout Component={Announcement} />,
+  },
+  {
+    path: "/announcementCreation",
+    element: <DashboardLayout Component={AnnouncementCreation} />,
+  },
+  
+  {
+    path: "/test",
+    element: <Test />,
+  },
+]);

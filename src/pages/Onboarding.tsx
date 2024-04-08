@@ -69,7 +69,7 @@ function Onboarding() {
         </div>
 
         <div className=" mb-2">
-          <Link to=''>
+          <Link to="/onboarding/employeeCreation">
             <button className="bg-green-500 text-white h-9 w-32 rounded-md">
               Add New
             </button>
