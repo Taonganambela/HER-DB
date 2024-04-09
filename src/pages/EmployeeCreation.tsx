@@ -1,4 +1,16 @@
+import {
+  Box,
+  IconButton,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 import { Link } from "react-router-dom";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function EmployeeCreation() {
   return (
@@ -254,6 +266,33 @@ function EmployeeCreation() {
             </div>
           </div>
         </form>
+        <Box sx={{ mt: 2, padding: 3, borderRadius: "30px" }}>
+          <TableContainer component={Paper} elevation={2}>
+            <Table aria-label="education table">
+              <TableHead className="bg-gray-200">
+                <TableRow>
+                  <TableCell>Document type</TableCell>
+                  <TableCell>File Name</TableCell>
+                  <TableCell>Status</TableCell>
+                  <TableCell className="w-[150px]">Actions</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell>NRC</TableCell>
+                  <TableCell>File_name</TableCell>
+                  <TableCell>Uploaded</TableCell>
+
+                  <TableCell>
+                    <IconButton className="">
+                      <DeleteIcon className="text-red-600" />
+                    </IconButton>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
       </div>
 
       <div className="flex ml-auto items-center justify-between w-full mt-12">
@@ -265,9 +304,11 @@ function EmployeeCreation() {
           </Link>
         </div>
         <div>
+          <Link to="/employeeDetails">
           <button className="bg-[#549B69] text-sm text-white h-12 w-[200px] rounded-md">
-            Send
+            Create
           </button>
+          </Link>
         </div>
       </div>
     </div>

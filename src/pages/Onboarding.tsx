@@ -10,7 +10,11 @@ const columns = [
   },
   {
     name: "Employee Name",
-    selector: (row: any) => row.EmployeeName,
+    cell: (row: any) => (
+      <Link to={`/employeeDetails`} className="hover:text-green-600">
+        {row.EmployeeName}
+      </Link>
+    ),
     sortable: true,
   },
   {
@@ -69,7 +73,7 @@ function Onboarding() {
         </div>
 
         <div className=" mb-2">
-          <Link to="/onboarding/employeeCreation">
+          <Link to="/employeeCreation">
             <button className="bg-green-500 text-white h-9 w-32 rounded-md">
               Add New
             </button>

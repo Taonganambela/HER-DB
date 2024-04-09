@@ -13,6 +13,7 @@ import Test from "./pages/Test";
 import Announcement from "./pages/Announcement";
 import AnnouncementCreation from "./pages/AnnouncementCreation";
 import EmployeeCreation from "./pages/EmployeeCreation";
+import EmployeeDetails from "./pages/EmployeeDetails";
 
 export const router = createBrowserRouter([
   {
@@ -40,7 +41,14 @@ export const router = createBrowserRouter([
     path: "/onboarding",
     element: <DashboardLayout Component={Onboarding} />,
   },
-
+  {
+    path: "/employeeCreation",
+    element: <DashboardLayout Component={EmployeeCreation} />,
+  },
+  {
+    path: "/EmployeeDetails",
+    element: <DashboardLayout Component={EmployeeDetails} />,
+  },
   {
     path: "/offboarding",
     element: <DashboardLayout Component={Offboarding} />,
@@ -63,7 +71,7 @@ export const router = createBrowserRouter([
     path: "/announcementCreation",
     element: <DashboardLayout Component={AnnouncementCreation} />,
   },
-  
+
   {
     path: "/test",
     element: <Test />,
