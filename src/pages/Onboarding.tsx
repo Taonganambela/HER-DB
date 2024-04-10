@@ -85,7 +85,7 @@ function Onboarding() {
         pagination
         columns={columns}
         data={data}
-        className="dark:bg-slate-900"
+        className="data-table" // Add class name for styling
       />
     </div>
   );

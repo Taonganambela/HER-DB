@@ -125,7 +125,7 @@ function DashboardLayout({ Component }: DashboardLayoutProps) {
                     <Link to="/employeeDetails">
                       <MenuItem onClick={handleClose}>Profile</MenuItem>
                     </Link>
-                    <Link to="/">
+                    <Link to="/resignation">
                       <MenuItem onClick={handleClose}>Resign</MenuItem>
                     </Link>
                   </Menu>

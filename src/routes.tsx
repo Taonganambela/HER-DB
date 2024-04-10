@@ -14,6 +14,7 @@ import Announcement from "./pages/Announcement";
 import AnnouncementCreation from "./pages/AnnouncementCreation";
 import EmployeeCreation from "./pages/EmployeeCreation";
 import EmployeeDetails from "./pages/EmployeeDetails";
+import Resignation from "./pages/Resignation";
 
 export const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ export const router = createBrowserRouter([
   {
     path: "/announcements",
     element: <DashboardLayout Component={Announcement} />,
+  },
+  {
+    path: "/resignation",
+    element: <DashboardLayout Component={Resignation} />,
   },
   {
     path: "/announcementCreation",
