@@ -1,6 +1,30 @@
-import DataTable from "react-data-table-component";
+import DataTable, { createTheme } from "react-data-table-component";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../redux/hooks";
+import { selectThemeMode } from "../redux/slices/ThemeSwitcherSlice";
+
+createTheme('solarized', {
+  text: {
+    primary: '#9299a6',
+    secondary: '#9299a6',
+  },
+  background: {
+    default: '#202f3d',
+  },
+  context: {
+    background: '#202f3d',
+    text: '#FFFFFF',
+  },
+  divider: {
+    default: '#e0ffff',
+  },
+  action: {
+    button: 'rgba(0,0,0,.54)',
+    hover: 'rgba(0,0,0,.08)',
+    disabled: 'rgba(0,0,0,.12)',
+  },
+}, 'dark');
 
 const columns = [
   {
@@ -60,6 +84,7 @@ for (let i = 0; i < 50; i++) {
 }
 
 function Offboarding() {
+  const themeMode = useAppSelector(selectThemeMode);
   return (
     <div className="dark:bg-bkgSecondary dark:text-content max-h-fit pb-20 p-8 w-full ">
       <h1 className="font-semibold text-2xl text-gray-600 mb-3 dark:text-slate-300">
@@ -67,11 +92,10 @@ function Offboarding() {
       </h1>
 
       <DataTable
-        theme="light"
+        theme={themeMode == "light" ? 'light' : 'solarized'}        
         pagination
         columns={columns}
         data={data}
-        className="dark:bg-slate-900"
       />
     </div>
   );

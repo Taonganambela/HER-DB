@@ -188,10 +188,7 @@ function RequisitionDetails() {
           Decline
         </button>
       </div>
-
-
       <Modal
-        sx={style}
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -239,8 +236,6 @@ function RequisitionDetails() {
           </div>
         </Box>
       </Modal>
-
-      
     </div>
   );
 }

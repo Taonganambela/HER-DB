@@ -1,6 +1,49 @@
-import DataTable from "react-data-table-component";
+import DataTable, { createTheme } from "react-data-table-component";
+import FindInPageIcon from '@mui/icons-material/FindInPage';import { Link } from "react-router-dom";
+import { useAppSelector } from "../redux/hooks";
+import { selectThemeMode } from "../redux/slices/ThemeSwitcherSlice";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import { Link } from "react-router-dom";
+import FolderSharedIcon from '@mui/icons-material/FolderShared';
+import BusinessIcon from '@mui/icons-material/Business';
+import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
+import { useState } from "react";
+import { Menu, MenuItem } from "@mui/material";
+
+
+function Onboarding() {
+
+  const themeMode = useAppSelector(selectThemeMode);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+
+createTheme('solarized', {
+  text: {
+    primary: '#9299a6',
+    secondary: '#9299a6',
+  },
+  background: {
+    default: '#202f3d',
+  },
+  context: {
+    background: '#202f3d',
+    text: '#FFFFFF',
+  },
+  divider: {
+    default: '#e0ffff',
+  },
+  action: {
+    button: 'rgba(0,0,0,.54)',
+    hover: 'rgba(0,0,0,.08)',
+    disabled: 'rgba(0,0,0,.12)',
+  },
+}, 'dark');
 
 const columns = [
   {
@@ -42,8 +85,16 @@ const columns = [
     selector: (row: any) => row.i,
     cell: (row: any) => (
       <Link className=" text-purple-600" ref={row.Link} to={""}>
-        <VisibilityIcon />
-      </Link>
+         <button
+                  id="basic-button"
+                  aria-controls={open ? "basic-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? "true" : undefined}
+                  onClick={handleClick}
+                >
+                 <VisibilityIcon />
+                </button>
+            </Link>
     ),
   },
 ];
@@ -54,7 +105,7 @@ const sample = {
   Section: "Development & Intergration",
   GNNumber: "gn1803",
   Position: "Software",
-  image: <VisibilityIcon className="text-purple-700" />,
+  image: <FindInPageIcon className="text-purple-700" />,
 };
 
 const data: any = [];
@@ -62,7 +113,6 @@ for (let i = 0; i < 50; i++) {
   let t = { ...sample, no: i + 1 };
   data.push(t);
 }
-function Onboarding() {
   return (
     <div className="dark:bg-bkgSecondary dark:text-content max-h-fit pb-20 p-8 w-full">
       <div className="flex ml-auto items-center justify-between w-full">
@@ -72,16 +122,41 @@ function Onboarding() {
           </h1>
         </div>
 
-        <div className=" mb-2">
-          <Link to="/employeeCreation">
+        <div className=" mb-2 ml-auto">
+          <Link to="onboarding/employeeCreation">
             <button className="bg-green-500 text-white h-9 w-32 rounded-md">
               Add New
             </button>
           </Link>
         </div>
+
+        <div className="dark:bg-slate-900">
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                      "aria-labelledby": "basic-button",
+                    }}
+                    className=""
+                  >
+                    <Link to="/fileCheckList"> 
+                      <MenuItem onClick={handleClose} > <FolderSharedIcon className="mr-2 text-gray-800"/>Personal check List</MenuItem>
+                    </Link>
+
+                    <Link to="/inductionlist"> 
+                      <MenuItem onClick={handleClose} > <BusinessIcon className="mr-2 text-gray-800"/>Personal induction List</MenuItem>
+                    </Link>
+                    <Link to="/orientationChecklist"> 
+                      <MenuItem onClick={handleClose} > <FlipCameraAndroidIcon className="mr-2 text-gray-800"/>Personal Orientation List</MenuItem>
+                    </Link>
+                  </Menu>
+                </div>
       </div>
 
-      <DataTable
+      <DataTable       
+       theme={themeMode == "light" ? 'light' : 'solarized'}        
         pagination
         columns={columns}
         data={data}

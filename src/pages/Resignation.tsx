@@ -3,6 +3,16 @@ import { useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import BackgroundLetterAvatars from "../components/Avatar";
 
+const style = {
+  position: "absolute" as "absolute",
+  bottom: "15%",
+  right: "-10%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "#16a349",
+  boxShadow: 24,
+  borderRadius: "20px",
+};
 
 function Resignation() {
   const [open, setOpen] = useState(false);
@@ -170,7 +180,7 @@ function Resignation() {
 
        <div className="border-b border-b-gray-300 bg-white-600  text-md py-2 font-semibold flex w-full justify-evenly">
           
-          <h2 className="font-semibold text-center  p-1 ">
+          <h2 className="font-semibold text-center text-gray-600 dark:text-white  p-1 ">
             Manager's comment: Heheheh wish i'd fired you first.
           </h2>
         </div>
@@ -204,14 +214,14 @@ function Resignation() {
           Decline
         </button>
       </div>
-      
+
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box className="rounded-t-lg ">
+        <Box sx={style} className="rounded-t-lg ">
           <h1 className="p-2 text-center text-white">SEND TO</h1>
           <div className="max-h-[300px] overflow-y-scroll">
             <div className="flex space-x-2 items-center p-4 bg-white dark:bg-slate-900">

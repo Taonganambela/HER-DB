@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import SearchIcon from "@mui/icons-material/Search";
-import { IconButton, Menu, MenuItem, TextField } from "@mui/material";
+import { Box, IconButton, Menu, MenuItem, TextField } from "@mui/material";
+import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import SidebarItem from "../components/SidebarItem";
 import BackgroundLetterAvatars from "../components/Avatar";
 import ThemeSwitcher from "../components/ThemeSwitcher";
@@ -14,7 +15,8 @@ import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import GroupsIcon from "@mui/icons-material/Groups";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import PersonRemoveAlt1Icon from "@mui/icons-material/PersonRemoveAlt1";
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
 type DashboardLayoutProps = {
   Component: React.ComponentType;
 };
@@ -94,7 +96,7 @@ function DashboardLayout({ Component }: DashboardLayoutProps) {
           <div className="flex items-center  bg-white text-gray-900 dark:bg-[#202E3C]">
             <ThemeSwitcher />
             <div className="flex space-x-2 ml-4 items-center mr-4">
-              <BackgroundLetterAvatars name="Nahshon Kampamba" size={56} />
+              <BackgroundLetterAvatars name="Taonga Nambela" size={56} />
 
               <div className="flex flex-col dark:border-b-gray bg-white text-gray-900 dark:bg-[#202E3C]">
                 <button
@@ -112,7 +114,7 @@ function DashboardLayout({ Component }: DashboardLayoutProps) {
                   Software Developer
                 </h3>
 
-                <div>
+                <div className="dark:bg-slate-900">
                   <Menu
                     id="basic-menu"
                     anchorEl={anchorEl}
@@ -121,12 +123,19 @@ function DashboardLayout({ Component }: DashboardLayoutProps) {
                     MenuListProps={{
                       "aria-labelledby": "basic-button",
                     }}
+                    className=""
                   >
-                    <Link to="/employeeDetails">
-                      <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    </Link>
+                    <Link to="/employeeDetails"> 
+
+                      <MenuItem onClick={handleClose} > <AccountCircleIcon className="mr-2 text-gray-800"/>Profile</MenuItem>
+ 
+                   </Link>
                     <Link to="/resignation">
-                      <MenuItem onClick={handleClose}>Resign</MenuItem>
+                      <MenuItem onClick={handleClose} > <HistoryEduIcon className="mr-2 text-gray-800"/>Resign</MenuItem>
+                    </Link>
+
+                    <Link to="/onboardingPlan">
+                      <MenuItem onClick={handleClose} > <GroupAddIcon className="mr-2 text-gray-800"/>Onboarding Plan</MenuItem>
                     </Link>
                   </Menu>
                 </div>

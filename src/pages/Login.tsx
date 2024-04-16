@@ -3,6 +3,7 @@ import image from "../assets/loginImage.jpeg";
 import logo from "../assets/ZamtelLogo.png";
 import "./main.css";
 import EmailIcon from "@mui/icons-material/Email";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -34,7 +35,8 @@ function Login() {
             <h3 className="text-purple-600">Password</h3>
           <input className="login_input" placeholder="Password" />
           </div>
-
+          
+          
           <button className="p-2 bg-purple-600 text-white w-[80%] rounded-lg">
             Sign In
           </button>

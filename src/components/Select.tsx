@@ -30,11 +30,9 @@ function Select() {
           </svg>
         </span>
       </li>
-
     </ul>
   </div>
 </div>
-
   )
 }
 

@@ -24,61 +24,61 @@ function EmployeeDetails() {
           <h2 className="text-left w-full p-2 text-xl">Employee Details</h2>
         </div>
 
-        <div className="flex justify-evenly dark:bg-slate-900 border-l border-l-gray-300">
-          <h2 className="block font-semibold flex-[0.25] text-center py-3 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+        <div className="flex justify-evenly dark:bg-slate-900 border-l border-l-gray-300 dark:border-l-gray-700">
+          <h2 className="block font-semibold flex-[0.25] text-center py-3 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             First Name:<span className="font-normal ml-9">Nashon</span>
           </h2>
-          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             Other Name: <span className="font-normal ml-9">-</span>
           </h2>
-          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             Last Name: <span className="font-normal ml-9">Kampamba</span>
           </h2>
-          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             DOB: <span className="font-normal ml-9">10/07/1996</span>
           </h2>
         </div>
 
-        <div className="flex justify-evenly dark:bg-slate-900 border-t border-t-gray-300 border-l border-l-gray-300">
-          <h2 className="block font-semibold flex-[0.25] text-center py-3 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+        <div className="flex justify-evenly dark:bg-slate-900 border-t border-t-gray-300 border-l border-l-gray-300 dark:border-t-gray-700 dark:border-l-gray-700">
+          <h2 className="block font-semibold flex-[0.25] text-center py-3 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             Gender:<span className="font-normal ml-9">Male</span>
           </h2>
-          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             NRC Numnber: <span className="font-normal ml-9">9234/12/1</span>
           </h2>
-          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             Email: <span className="font-normal ml-9">n.k@zamtel.co.zm</span>
           </h2>
-          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+          <h2 className="block font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             Qualification:{" "}
             <span className="font-normal ml-9">Bachelors Degree</span>
           </h2>
         </div>
 
-        <div className="flex justify-evenly dark:bg-slate-900 border-t border-t-gray-300 border-l border-l-gray-300">
-          <h2 className=" font-semibold flex-[0.25] text-center py-3 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+        <div className="flex justify-evenly dark:bg-slate-900 border-t border-t-gray-300 border-l border-l-gray-300 dark:border-t-gray-700 dark:border-l-gray-700">
+          <h2 className=" font-semibold flex-[0.25] text-center py-3 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             Job Title:
             <span className="font-normal ml-9">Software Developer</span>
           </h2>
-          <h2 className="font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+          <h2 className="font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             Department: <span className="font-normal ml-9">IT</span>
           </h2>
-          <h2 className="font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+          <h2 className="font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             Station:{" "}
             <span className="font-normal ml-9">Development & Intergration</span>
           </h2>
-          <h2 className="font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+          <h2 className="font-semibold flex-[0.25] text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700">
             GN: <span className="font-normal ml-9">gn1617</span>
           </h2>
         </div>
 
-        <div className="flex justify-evenly dark:bg-slate-900 border-t border-t-gray-300 border-l border-l-gray-300 mb-7">
-          <h2 className="border-b border-b-gray-300 w-full font-semibold  text-center py-3 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+        <div className="flex justify-evenly dark:bg-slate-900 border-t border-t-gray-300 border-l border-l-gray-300 mb-7 dark:border-l-gray-700 dark:border-t-gray-700">
+          <h2 className="border-b border-b-gray-300 w-full font-semibold  text-center py-3 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-t-gray-700 dark:border-r-gray-700 dark:border-b-gray-700">
             Date of first Appointment:
             <span className="font-normal ml-9"> 01/02/2024 </span>
           </h2>
 
-          <h2 className=" border-b border-b-gray-300 w-full font-semibold  text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300">
+          <h2 className=" border-b border-b-gray-300 w-full font-semibold  text-center py-2 text-slate-600 dark:text-slate-300 flex-wrap p-1 border-r border-r-gray-300 dark:border-r-gray-700 dark:border-b-gray-700">
             Salary Grade : <span className="font-normal ml-9"> 06 </span>
           </h2>
         </div>
@@ -92,21 +92,21 @@ function EmployeeDetails() {
           }}
           className="mb-6"
         >
-          <TableContainer component={Paper} elevation={2}>
+          <TableContainer component={Paper} elevation={2} className=" dark:bg-slate-700 ">
             <Table aria-label="education table">
-              <TableHead className="bg-gray-200">
-                <TableRow>
-                  <TableCell>Document type</TableCell>
-                  <TableCell>File Name</TableCell>
-                  <TableCell>Status</TableCell>
-                  <TableCell className="w-[150px]">Actions</TableCell>
+              <TableHead className="bg-gray-200  dark:bg-slate-700 ">
+                <TableRow >
+                  <TableCell  className="dark:text-[#a9cfbd]">Document type</TableCell>
+                  <TableCell  className="dark:text-[#a9cfbd]">File Name</TableCell>
+                  <TableCell  className="dark:text-[#a9cfbd]">Status</TableCell>
+                  <TableCell className="w-[150px] dark:text-[#a9cfbd]">Actions</TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody>
+              <TableBody >
                 <TableRow>
-                  <TableCell>NRC</TableCell>
-                  <TableCell>File_name</TableCell>
-                  <TableCell>Uploaded</TableCell>
+                  <TableCell  className="dark:text-[#a9cfbd]">NRC</TableCell>
+                  <TableCell  className="dark:text-[#a9cfbd]">File_name</TableCell>
+                  <TableCell  className="dark:text-[#a9cfbd]">Uploaded</TableCell>
 
                   <TableCell>
                     <IconButton className="">
@@ -117,9 +117,9 @@ function EmployeeDetails() {
               </TableBody>
               <TableBody>
                 <TableRow>
-                  <TableCell>NRC</TableCell>
-                  <TableCell>File_name</TableCell>
-                  <TableCell>Uploaded</TableCell>
+                  <TableCell  className="dark:text-[#a9cfbd]">NRC</TableCell>
+                  <TableCell  className="dark:text-[#a9cfbd]">File_name</TableCell>
+                  <TableCell  className="dark:text-[#a9cfbd]">Uploaded</TableCell>
 
                   <TableCell>
                     <IconButton className="">
@@ -130,9 +130,9 @@ function EmployeeDetails() {
               </TableBody>
               <TableBody>
                 <TableRow>
-                  <TableCell>NRC</TableCell>
-                  <TableCell>File_name</TableCell>
-                  <TableCell>Empty</TableCell>
+                  <TableCell  className="dark:text-[#a9cfbd]">NRC</TableCell>
+                  <TableCell  className="dark:text-[#a9cfbd]">File_name</TableCell>
+                  <TableCell  className="dark:text-[#a9cfbd]">Empty</TableCell>
 
                   <TableCell>
                     <IconButton className="">
