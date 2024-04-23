@@ -1,5 +1,3 @@
-import React from "react";
-
 function OnboardingPlan() {
 	return (
 		<div className="dark:bg-bkgSecondary dark:text-content h-content p-8 w-full">

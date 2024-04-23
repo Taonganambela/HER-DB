@@ -201,11 +201,11 @@ function OrientationChecklist() {
             </button>
          
         </div>
-        <div>
+        {/* <div>
           <button className="bg-[#549B69] text-sm text-white h-14 w-[200px] rounded-md">
             Send
           </button>
-        </div>
+        </div> */}
       </div>
 		</div>
 	);

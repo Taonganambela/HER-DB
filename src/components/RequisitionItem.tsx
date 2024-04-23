@@ -10,7 +10,7 @@ function RequisitionItem() {
       <h2 className="text-slate-600 font-semibold dark:text-slate-400">
         Development & Integrations
       </h2>
-      <Link to="/requisition-details">
+      <Link to="requisition-details">
         <button className="text-purple-600">View Details</button>
       </Link>
 

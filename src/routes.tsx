@@ -19,6 +19,11 @@ import OnboardingPlan from "./pages/OnboardingPlan";
 import FileCheckList from "./pages/FileCheckList";
 import { InductionList } from "./pages/InductionList";
 import OrientationChecklist from "./pages/OrientationChecklist";
+import OffBoardingcheckList from "./pages/OffBoardingcheckList";
+import DragDropFile from "./components/DragAndDropInput.tsx/DragDropFile";
+import RequisitionCreation from "./pages/RequisitionCreation";
+import ClearanceForm from "./pages/ClearanceForm";
+import DragDrop from "./pages/DragDrop";
 
 
 // interface Routes {
@@ -39,9 +44,17 @@ export const router = createBrowserRouter([
 		path: "/dashboard",
 		element: <DashboardLayout Component={Dashboard} />,
 	},
+  {
+		path: "/dashboard/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
 	{
 		path: "/notifications",
 		element: <DashboardLayout Component={Notifications} />,
+	},
+  {
+		path: "/notifications/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
 	},
 
 	{
@@ -49,16 +62,17 @@ export const router = createBrowserRouter([
 		element: <DashboardLayout Component={Requisitions} />,
 	},
 	{
-		path: "/requisition-details",
+		path: "/requisitions/requisition-details",
 		element: <DashboardLayout Component={RequisitionDetails} />,
 	},
-
-	{
-		path: "/onboardingPlan",
-		element: <DashboardLayout Component={OnboardingPlan} />,
-		children: [],
+  {
+		path: "/requisitions/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
 	},
-
+{
+		path: "/requisitions/requisitionCreation",
+		element: <DashboardLayout Component={RequisitionCreation} />,
+	},
 	{
 		path: "/onboarding",
 		element: <DashboardLayout Component={Onboarding} />,
@@ -66,19 +80,44 @@ export const router = createBrowserRouter([
 	},
 
 	{
-		path: "employeeCreation",
+		path: "/onboardingPlan",
+		element: <DashboardLayout Component={OnboardingPlan} />,
+	},
+	{
+		path: "/onboarding/employeeCreation",
 		element: <DashboardLayout Component={EmployeeCreation} />,
 	},
-
 	{
-		path: "/EmployeeDetails",
+		path: "/onboarding/employeeDetails",
 		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+
+  {
+		path: "/onboarding/fileCheckList",
+		element: <DashboardLayout Component={FileCheckList} />,
+	},
+	{
+		path: "/onboarding/inductionlist",
+		element: <DashboardLayout Component={InductionList} />,
+	},
+	{
+		path: "/onboarding/orientationChecklist",
+		element: <DashboardLayout Component={OrientationChecklist} />,
 	},
 	{
 		path: "/offboarding",
 		element: <DashboardLayout Component={Offboarding} />,
 	},
-
+	{
+		path: "/offboarding",
+		element: <DashboardLayout Component={Offboarding} />,
+	},
+	
+  {
+		path: "/offboarding/offBoardingcheckList",
+		element: <DashboardLayout Component={OffBoardingcheckList} />,
+	},
+	
 	{
 		path: "/employees",
 		element: <DashboardLayout Component={Employee} />,
@@ -88,30 +127,35 @@ export const router = createBrowserRouter([
 		path: "/departments",
 		element: <DashboardLayout Component={Department} />,
 	},
-	{
-		path: "/announcements",
-		element: <DashboardLayout Component={Announcement} />,
-	},
+	
 
 	{
 		path: "/resignation",
 		element: <DashboardLayout Component={Resignation} />,
 	},
+
+	
+
 	{
-		path: "/announcementCreation",
+		path: "/dragdropfileuploader",
+		element: <DashboardLayout Component={DragDrop} />,
+	},
+  {
+		path: "/announcements",
+		element: <DashboardLayout Component={Announcement} />,
+	},
+	{
+		path: "/announcements/announcementCreation",
 		element: <DashboardLayout Component={AnnouncementCreation} />,
 	},
-	{
-		path: "/fileCheckList",
-		element: <DashboardLayout Component={FileCheckList} />,
+  {
+		path: "/announcements/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
 	},
+
 	{
-		path: "/inductionlist",
-		element: <DashboardLayout Component={InductionList} />,
-	},
-	{
-		path: "/orientationChecklist",
-		element: <DashboardLayout Component={OrientationChecklist} />,
+		path: "/clearanceform",
+		element: <DashboardLayout Component={ClearanceForm} />,
 	},
 
 	{

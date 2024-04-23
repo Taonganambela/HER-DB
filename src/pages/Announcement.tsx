@@ -10,7 +10,7 @@ function Announcement() {
         </h1>
 
         <div className="mb-2">
-          <Link to="/announcementCreation">
+          <Link to="announcementCreation">
             <button className="bg-green-500 text-white h-9 w-32 rounded-md ">
               Add New
             </button>

@@ -6,6 +6,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import FolderSharedIcon from '@mui/icons-material/FolderShared';
 import BusinessIcon from '@mui/icons-material/Business';
 import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
+import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
 import { useState } from "react";
 import { Menu, MenuItem } from "@mui/material";
 
@@ -54,7 +55,7 @@ const columns = [
   {
     name: "Employee Name",
     cell: (row: any) => (
-      <Link to={`/employeeDetails`} className="hover:text-green-600">
+      <Link to={`employeeDetails`} className="hover:text-green-600">
         {row.EmployeeName}
       </Link>
     ),
@@ -92,7 +93,7 @@ const columns = [
                   aria-expanded={open ? "true" : undefined}
                   onClick={handleClick}
                 >
-                 <VisibilityIcon />
+                 <MoreHorizOutlinedIcon />
                 </button>
             </Link>
     ),
@@ -123,7 +124,7 @@ for (let i = 0; i < 50; i++) {
         </div>
 
         <div className=" mb-2 ml-auto">
-          <Link to="onboarding/employeeCreation">
+          <Link to="employeeCreation">
             <button className="bg-green-500 text-white h-9 w-32 rounded-md">
               Add New
             </button>
@@ -141,14 +142,14 @@ for (let i = 0; i < 50; i++) {
                     }}
                     className=""
                   >
-                    <Link to="/fileCheckList"> 
+                    <Link to="fileCheckList"> 
                       <MenuItem onClick={handleClose} > <FolderSharedIcon className="mr-2 text-gray-800"/>Personal check List</MenuItem>
                     </Link>
 
-                    <Link to="/inductionlist"> 
+                    <Link to="inductionlist"> 
                       <MenuItem onClick={handleClose} > <BusinessIcon className="mr-2 text-gray-800"/>Personal induction List</MenuItem>
                     </Link>
-                    <Link to="/orientationChecklist"> 
+                    <Link to="orientationChecklist"> 
                       <MenuItem onClick={handleClose} > <FlipCameraAndroidIcon className="mr-2 text-gray-800"/>Personal Orientation List</MenuItem>
                     </Link>
                   </Menu>

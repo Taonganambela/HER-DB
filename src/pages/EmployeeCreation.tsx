@@ -336,7 +336,7 @@ function EmployeeCreation() {
           </Link>
         </div>
         <div>
-          <Link to="/employeeDetails">
+          <Link to="employeeDetails">
           <button className="bg-[#549B69] text-sm text-white h-12 w-[200px] rounded-md">
             Create
           </button>

@@ -34,7 +34,12 @@ const columns = [
   },
   {
     name: "Employee Name",
-    selector: (row: any) => row.EmployeeName,
+    selector: (row: any) =>(
+      <Link to={"offBoardingcheckList"} className="hover:text-green-700">
+        {row.EmployeeName}
+      </Link>
+      ),
+    
     sortable: true,
   },
   {
