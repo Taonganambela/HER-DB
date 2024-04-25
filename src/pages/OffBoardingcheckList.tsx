@@ -1,23 +1,25 @@
+import { Link } from "react-router-dom";
+
 function OffBoardingcheckList() {
 	return (
 		<div className="dark:bg-bkgSecondary dark:text-content p-8 w-full overflow-y-auto">
 			<div className="flex ml-auto items-center justify-between w-full">
 				<div className="inline-block">
 					<h1 className="font-semibold text-2xl text-gray-600 mb-3 dark:text-slate-300 ">
-						Off Boarding Check List
+						Resignation
 					</h1>
 				</div>
 			</div>
 
 			<div>
-				<div className="bg-white rounded-md dark:bg-slate-900 pb-">
+				<div className="bg-white rounded-md dark:bg-slate-900 ">
 					<div className="bg-[#549B69] text-white py-2 text-md font-semibold rounded-t-lg flex w-full justify-evenly">
 						<h2 className="text-left w-full p-2 pl-3 text-xl">
 							Off-Boarding Check List
 						</h2>
 					</div>
 
-					<form action="" className="mb-20">
+					<form action="" className="mb-10">
 						<div className="flex space-x-6 p-3 mt-4 mb-4">
 							<div>
 								<label
@@ -539,7 +541,7 @@ function OffBoardingcheckList() {
 
 <div className=" text-center text-[18px] text-sx  mt-8">
 		<h4 className="dark:text-red-700 text-red-600">
-		*The employee, as well as the Line Manager/Head of Department, must sign this
+		*The employee, as well as the Line Manager/Head of Department, must confirm this
 document to verify that all Company property has been handed over.		
 </h4>
 	</div>
@@ -550,6 +552,14 @@ document to verify that all Company property has been handed over.
 
 					</form>
 				</div>
+			</div>
+			<div className="center-items justify-center flex mt-0">
+				<Link to="clearanceform">
+			
+				<button className="bg-green-700 text-white rounded-md w-[150px] h-14">
+					Next
+				</button>
+					</Link>
 			</div>
 		</div>
 	);

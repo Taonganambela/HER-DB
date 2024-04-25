@@ -6,8 +6,6 @@ import Notifications from "./pages/Notifications";
 import Requisitions from "./pages/Requisitions";
 import Onboarding from "./pages/Onboarding";
 import Offboarding from "./pages/Offboarding";
-import Employee from "./pages/Employee";
-import Department from "./pages/Department";
 import RequisitionDetails from "./pages/RequisitionDetails";
 import Test from "./pages/Test";
 import Announcement from "./pages/Announcement";
@@ -20,11 +18,9 @@ import FileCheckList from "./pages/FileCheckList";
 import { InductionList } from "./pages/InductionList";
 import OrientationChecklist from "./pages/OrientationChecklist";
 import OffBoardingcheckList from "./pages/OffBoardingcheckList";
-import DragDropFile from "./components/DragAndDropInput.tsx/DragDropFile";
 import RequisitionCreation from "./pages/RequisitionCreation";
 import ClearanceForm from "./pages/ClearanceForm";
-import DragDrop from "./pages/DragDrop";
-
+import ExitInterview from "./pages/ExitInterview";
 
 // interface Routes {
 //   path: string
@@ -44,39 +40,29 @@ export const router = createBrowserRouter([
 		path: "/dashboard",
 		element: <DashboardLayout Component={Dashboard} />,
 	},
-  {
-		path: "/dashboard/employeeDetails",
-		element: <DashboardLayout Component={EmployeeDetails} />,
-	},
+
 	{
 		path: "/notifications",
 		element: <DashboardLayout Component={Notifications} />,
 	},
-  {
-		path: "/notifications/employeeDetails",
-		element: <DashboardLayout Component={EmployeeDetails} />,
-	},
-
+	//requisition
 	{
 		path: "/requisitions",
 		element: <DashboardLayout Component={Requisitions} />,
+	},
+
+	{
+		path: "/requisitions/requisitionCreation",
+		element: <DashboardLayout Component={RequisitionCreation} />,
 	},
 	{
 		path: "/requisitions/requisition-details",
 		element: <DashboardLayout Component={RequisitionDetails} />,
 	},
-  {
-		path: "/requisitions/employeeDetails",
-		element: <DashboardLayout Component={EmployeeDetails} />,
-	},
-{
-		path: "/requisitions/requisitionCreation",
-		element: <DashboardLayout Component={RequisitionCreation} />,
-	},
+	// onboarding
 	{
 		path: "/onboarding",
 		element: <DashboardLayout Component={Onboarding} />,
-		children: [],
 	},
 
 	{
@@ -87,12 +73,8 @@ export const router = createBrowserRouter([
 		path: "/onboarding/employeeCreation",
 		element: <DashboardLayout Component={EmployeeCreation} />,
 	},
-	{
-		path: "/onboarding/employeeDetails",
-		element: <DashboardLayout Component={EmployeeDetails} />,
-	},
 
-  {
+	{
 		path: "/onboarding/fileCheckList",
 		element: <DashboardLayout Component={FileCheckList} />,
 	},
@@ -104,43 +86,41 @@ export const router = createBrowserRouter([
 		path: "/onboarding/orientationChecklist",
 		element: <DashboardLayout Component={OrientationChecklist} />,
 	},
+
 	{
 		path: "/offboarding",
 		element: <DashboardLayout Component={Offboarding} />,
 	},
 	{
-		path: "/offboarding",
-		element: <DashboardLayout Component={Offboarding} />,
-	},
-	
-  {
 		path: "/offboarding/offBoardingcheckList",
 		element: <DashboardLayout Component={OffBoardingcheckList} />,
 	},
-	
-	{
-		path: "/employees",
-		element: <DashboardLayout Component={Employee} />,
-	},
 
-	{
-		path: "/departments",
-		element: <DashboardLayout Component={Department} />,
-	},
 	
 
+	//Resignation
 	{
 		path: "/resignation",
 		element: <DashboardLayout Component={Resignation} />,
 	},
-
-	
+	{
+		path: "/resignation/offBoardingcheckList",
+		element: <DashboardLayout Component={OffBoardingcheckList} />,
+	},
 
 	{
-		path: "/dragdropfileuploader",
-		element: <DashboardLayout Component={DragDrop} />,
+		path: "/resignation/offBoardingcheckList/clearanceform",
+		element: <DashboardLayout Component={ClearanceForm} />,
 	},
-  {
+
+	{
+		path: "/resignation/offBoardingcheckList/clearanceform/exitinterview",
+		element: <DashboardLayout Component={ExitInterview} />,
+	},
+
+	// announcements
+
+	{
 		path: "/announcements",
 		element: <DashboardLayout Component={Announcement} />,
 	},
@@ -148,16 +128,85 @@ export const router = createBrowserRouter([
 		path: "/announcements/announcementCreation",
 		element: <DashboardLayout Component={AnnouncementCreation} />,
 	},
-  {
-		path: "/announcements/employeeDetails",
+
+	//all paths to employee details
+	{
+		path: "/resignation/offBoardingcheckList/employeeDetails",
 		element: <DashboardLayout Component={EmployeeDetails} />,
 	},
 
 	{
-		path: "/clearanceform",
-		element: <DashboardLayout Component={ClearanceForm} />,
+		path: "/resignation/offBoardingcheckList/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/resignation/offBoardingcheckList/clearanceform/exitinterview/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/onboarding/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/onboarding/employeeCreation/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/onboarding/fileCheckList/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/onboarding/inductionlist/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/onboarding/orientationChecklist/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/offboarding/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/resignation/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
 	},
 
+	{
+		path: "/requisitions/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/onboarding/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/announcements/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/dashboard/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/notifications/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+	{
+		path: "/requisitions/requisitionCreation/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+	},
+
+	{
+		path: "/requisitions/requisition-details/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+
+	},
+	{
+		path: "/announcements/announcementCreation/employeeDetails",
+		element: <DashboardLayout Component={EmployeeDetails} />,
+
+	},
 	{
 		path: "/test",
 		element: <Test />,

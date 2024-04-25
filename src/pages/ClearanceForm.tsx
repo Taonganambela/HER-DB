@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function ClearanceForm() {
 	return (
-		<div className="dark:bg-bkgSecondary dark:text-content max-h-fit p-8 w-full h-screen">
+		<div className="dark:bg-bkgSecondary dark:text-content max-h-fit p-8 w-full overflow-y-auto">
 			<h1 className="font-semibold text-2xl text-gray-600 mb-3 dark:text-slate-300 pl-2">
-				Off Boarding
+				Resignation
 			</h1>
 
 			<div className="bg-white rounded-md dark:bg-slate-900 pb-5">
@@ -1036,6 +1038,17 @@ function ClearanceForm() {
 
 				</form>
 			</div>
+
+			<div className="center-items justify-center flex mt-4">
+				<Link to="exitinterview">
+			
+				<button className="bg-green-700 text-white rounded-md w-[150px] h-14">
+					Next
+				</button>
+					</Link>
+			</div>
+
+
 		</div>
 	);
 }

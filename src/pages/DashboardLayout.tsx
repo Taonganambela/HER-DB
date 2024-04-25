@@ -69,7 +69,7 @@ function DashboardLayout({ Component }: DashboardLayoutProps) {
           <SidebarItem Icon={GroupsIcon} text="employees" />
         </Link> */}
 
-				<Link to="/dragdropfileuploader">
+				<Link to="/resignation">
 					<SidebarItem Icon={HistoryEduIcon} text="resignation" />
 				</Link>
 
@@ -85,6 +85,19 @@ function DashboardLayout({ Component }: DashboardLayoutProps) {
 					<h1 className=" dark:text-content text-white ">Logout</h1>
 				</div>
 			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+			
 
 			<div className="w-[78%] fixed top-0 right-0 ">
 				<div className="flex justify-between py-6 border-b-2 dark:border-b-[#202e3c] dark:bg-[#202e3c]">
@@ -145,13 +158,13 @@ function DashboardLayout({ Component }: DashboardLayoutProps) {
 												Profile
 											</MenuItem>
 										</Link>
-										<Link to="/resignation">
+										{/* <Link to="/resignation">
 											<MenuItem onClick={handleClose}>
 												{" "}
 												<HistoryEduIcon className="mr-2 text-gray-800" />
 												Resign
 											</MenuItem>
-										</Link>
+										</Link> */}
 
 										<Link to="/onboardingPlan">
 											<MenuItem onClick={handleClose}>

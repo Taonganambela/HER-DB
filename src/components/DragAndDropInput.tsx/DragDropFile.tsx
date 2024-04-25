@@ -22,9 +22,13 @@ const DragDropFile: React.FC<DragDropFileProps> = (props) => {
 	const onFileDrop = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const newFile = e.target.files?.[0];
 		if (newFile) {
-			const updatedList = [...fileList, newFile];
-			setFileList(updatedList);
-			props.onFileChange(updatedList);
+			if (newFile.type === "application/pdf") {
+				const updatedList = [...fileList, newFile];
+				setFileList(updatedList);
+				props.onFileChange(updatedList);
+			} else {
+				alert("Please only upload PDF files.");
+			}
 		}
 	};
 
@@ -39,7 +43,7 @@ const DragDropFile: React.FC<DragDropFileProps> = (props) => {
 	};
 
 	return (
-		<div className="dark:bg-bkgSecondary dark:text-content   p-8 w-full h-screen">
+		<div className="dark:bg-bkgSecondary dark:text-content p-8 w-full h-screen">
 			<div className="flex ml-auto items-center justify-between w-full mb-8">
 				<div className="inline-block">
 					<h1 className="font-semibold text-2xl text-gray-600 mb-3 dark:text-slate-300">
@@ -48,30 +52,42 @@ const DragDropFile: React.FC<DragDropFileProps> = (props) => {
 				</div>
 			</div>
 
-			<div className="center-items justify-center flex">
-				<div className="drop-file-input__label border-4 border-gray-800 dark:border-white rounded-lg border-dashed w-[400px]">
-					<div className="text-center center-items justify-center flex mt-8">
-						<div
-							ref={wrapperRef}
-							className="drop-file-input"
-							onDragEnter={onDragEnter}
-							onDragLeave={onDragLeave}
-							onDrop={onDrop}
-						>
-							<div className="">
-								<img src={uploadImg} alt="" className="ml-12" />
-								<p className="w-full text-center">
-									Drag & Drop your files here
-								</p>
+
+			<div className="bg-white rounded-md dark:bg-slate-900 pb-1">
+				<div className="bg-[#549B69] text-white py-2 text-md font-semibold rounded-t-lg flex w-full justify-evenly">
+					<h2 className="text-left w-full p-2 pl-3 text-xl">
+						Submit Resignation
+					</h2>
+				</div>
+
+
+
+
+
+				<div className="center-items justify-center flex mt-3 mb-3 ">
+					<div className="drop-file-input__label border-4 border-gray-800 dark:border-white rounded-lg border-dashed w-[400px]">
+						<div className="text-center center-items justify-center flex mt-2">
+							<div
+								ref={wrapperRef}
+								className="drop-file-input"
+								onDragEnter={onDragEnter}
+								onDragLeave={onDragLeave}
+								onDrop={onDrop}
+							>
+								<div className="">
+									<img src={uploadImg} alt="" className="ml-12" />
+									<p className="w-full text-center">
+										Drag & Drop your files here
+									</p>
+								</div>
+								<input type="file" value="" onChange={onFileDrop} />
 							</div>
-							<input type="file" value="" onChange={onFileDrop} />
 						</div>
 					</div>
 				</div>
-			</div>
 
 			{fileList.length > 0 ? (
-				<div className="drop-file-preview">
+				<div className="drop-file-preview p-6">
 					<p className="drop-file-preview__title">Ready to upload</p>
 					{fileList.map((item, index) => (
 						<div key={index} className="drop-file-preview__item">
@@ -99,13 +115,19 @@ const DragDropFile: React.FC<DragDropFileProps> = (props) => {
 					))}
 				</div>
 			) : null}
+		
+	
+		</div><div className="mt-4 justify-center flex items-center overflow-y">
+          <Link to="offBoardingcheckList">
+            <button className="bg-green-500 text-white h-9 w-32 rounded-md ">
+              Submit
+            </button>
+          </Link>
+        </div>
 
-			<div className="absolute bottom-44  mt-10">
-                <Link to='/resignation'>
-				<button className="bg-[#549B69] text-sm text-white h-14 w-[200px] rounded-md">
-					Send
-				</button></Link>
-			</div>
+		<div className="text-center mt-10">
+			<h2 className=" font-bold text-red-800 dark:text-red-400 ">Please wait for feed back after submiting your Resignation letter</h2>
+		</div>
 		</div>
 	);
 };
@@ -115,3 +137,7 @@ DragDropFile.propTypes = {
 };
 
 export default DragDropFile;
+
+
+
+//this component is rendered using resignation.

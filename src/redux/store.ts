@@ -1,15 +1,23 @@
-import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./slices/counterSlice"
-import rootReducer from  './RootReducer';
+import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
+import RequisitionCreationReducer from "./slices/RequisitionCreationSlice"
+
 
 //Nash so here we create the new store
 
-const store = configureStore({
-    reducer: rootReducer
+ export const store = configureStore({
+    reducer:{
+        RequisitionCreation:RequisitionCreationReducer,
+
+    } 
 })
 
-export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch;
 
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
 
-export default store;
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;
