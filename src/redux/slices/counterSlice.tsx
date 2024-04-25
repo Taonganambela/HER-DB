@@ -3,11 +3,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 //Create an interface
-interface CounterState {
+export interface CounterState {
     value: number;
 }
 // Define initial state
-const initialState: CounterState = {
+export const initialState: CounterState = {
     value: 0
 }
 

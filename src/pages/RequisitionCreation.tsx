@@ -28,28 +28,49 @@ function RequisitionCreation() {
 
 	
 
-	const handleChange = (e:any) => {
-		const { name, value } = e.target;
-		setFormData({
-			...formData,
-			[name]: value,
-		});
-	};
+	
 
-	// const handleSubmit = (e) => {
-	// 	e.preventDefault();
-	// 	// Add your validation logic here
-	// 	if (
-	// 		formData.department === "" ||
-	// 		formData.section === "" ||
-	// 		formData.jobTitle === ""
-	// 	) {
-	// 		alert("Please fill in all required fields.");
-	// 		return;
-	// 	}
-	// 	// If all fields are filled, submit the form
-	// 	console.log("Form submitted:", formData);
+	// const handleChange = (e:any) => {
+	// 	const { name, value } = e.target;
+	// 	setFormData({
+	// 		...formData,
+	// 		[name]: value,
+	// 	});
 	// };
+
+	const handleSubmit = (e:any) => {
+		e.preventDefault();
+		// Add your validation logic here
+		if (
+			formData.department === "" ||
+			formData.section === "" ||
+			formData.jobTitle === "" ||
+			formData.department === "" ||
+			formData.section === "" ||
+			formData.jobTitle === "" ||
+			formData.jobPosition === "" ||
+			formData.budgetstrength === "" ||
+			formData.actualStrength === "" ||
+			formData.variance === "" ||
+			formData.numberrequired === "" ||
+			formData.grade === "" ||
+			formData.basicpay === "" ||
+			formData.dateRequired === "" ||
+			formData.contractduration === "" ||
+			formData.employeegn === "" ||
+			formData.preferedEducation === "" ||
+			formData.professionalQualification === "" ||
+			formData.preferedExperience === "" ||
+			formData.justification === "" ||
+			formData.requisitionedBy === "" 
+			
+		) {
+			alert("Please fill in all required fields.");
+			return;
+		}
+		// If all fields are filled, submit the form
+		console.log("Form submitted:", formData);
+	};
 
 
 	return (
@@ -490,7 +511,7 @@ function RequisitionCreation() {
         </div>*/}
 
 				<Link to="/requisitions">
-					<button type="submit" className="bg-[#549B69] text-sm text-white h-12 w-[200px] rounded-md">
+					<button type="submit" onClick={handleSubmit} className="bg-[#549B69] text-sm text-white h-12 w-[200px] rounded-md">
 						Submit
 					</button>
 				</Link>

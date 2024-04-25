@@ -3,7 +3,6 @@ import { useState } from "react";
 import BackgroundLetterAvatars from "../components/Avatar";
 import SendIcon from "@mui/icons-material/Send";
 
-
 interface Task {
   name: string;
   category: string;
@@ -21,6 +20,7 @@ const style = {
 };
 
 export function InductionList() {
+
 	const [open, setOpen] = useState(false);
 	const handleClose = () => setOpen(false);
   const [tasks, setTasks] = useState<Task[]>([
@@ -73,6 +73,7 @@ export function InductionList() {
   return (
 
 	<div className="dark:bg-bkgSecondary dark:text-content max-h-fit pb-20 p-8 w-full">
+		
 			<div className="flex ml-auto items-center justify-between w-full">
 				<div className="flex">
 					<h1 className="font-semibold text-2xl text-gray-600 mb-3 dark:text-slate-300 ">
