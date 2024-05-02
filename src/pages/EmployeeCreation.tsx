@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useState } from "react";
 
 const documents = [
   { documents: "CV/Application Letter", value: "CV/Application Letter" },
@@ -40,7 +41,64 @@ const documents = [
   { documents: "Exit Interview Form", value: "Exit Interview Form" },
 ];
 
+
+
+
 function EmployeeCreation() {
+  const [formData, setFormData] = useState({
+		username: "",
+		otherName: "",
+		lastName: "",
+		dob:"",
+		gender:"",
+		nrc:"",
+		email:"",
+		qualification:"",
+		dept:"",
+		station:"",
+		gn:"",
+		date:"",
+		doc:"",
+		grade:"",
+		docType:"",
+		upload:"",
+		
+
+	});
+
+  // const handleSubmit = (e:any) => {
+	// 	e.preventDefault();
+	// 	// Add your validation logic here
+	// 	if (
+	// 		formData.	username === "cs\fsd" ||
+	// 		formData.otherName === "sdf" ||
+	// 		formData.lastName === "dsf" ||
+	// 		formData.dob === "fsdfd" ||
+	// 		formData.gender === "sdfsdf" ||
+	// 		formData.nrc === "dfs" ||
+	// 		formData.email === "sfsd" ||
+	// 		formData.qualification === "dsfsdf" ||
+	// 		formData.dept === "sdf" ||
+	// 		formData.station === "sdf" ||
+	// 		formData.gn === "sdf" ||
+	// 		formData.date === "sdf" ||
+	// 		formData.doc === "dsf" ||
+	// 		formData.grade === "sf" ||
+	// 		formData.docType === "sf" ||
+  //     formData.upload === "sdf" 
+	
+			
+	// 	) {
+	// 		alert("Please fill in all required fields.");
+	// 		return;
+	// 	}
+		
+	// 	console.log("Form submitted:", formData);
+	// };
+
+
+
+
   return (
     <div className="dark:bg-bkgSecondary dark:text-content h-content p-8 w-full">
       <h1 className="font-semibold text-2xl text-gray-600 mb-3 dark:text-slate-300 ">
@@ -51,6 +109,7 @@ function EmployeeCreation() {
           <h2 className="text-left w-full p-2 text-xl">Employee Creation</h2>
         </div>
         <form action="" className="p-3 pl-3 mt-8">
+          <div className="">
           <div className="flex space-x-16 mb-10">
             <div>
               <label
@@ -62,36 +121,57 @@ function EmployeeCreation() {
               <input
                 className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-12 rounded-lg w-[300px]"
                 id="username"
-                type="text"
-                placeholder="Username"
+									type="text"
+									placeholder="username"
+									name="username"
+									value={formData.username}
+									onChange={(e) => {
+										const newObj = { ...formData, username: e.target.value };
+										setFormData(newObj);
+									  }}
+									required
               />
             </div>
             <div>
               <label
                 className="block font-semibold mb-2 dark:text-[#AAD5E1]"
-                htmlFor="OtherName"
+                htmlFor="otherName"
               >
                 Other Name(Optional)
               </label>
               <input
                 className="dark:bg-slate-700 border-2 p-2 border-gray-500  text-gray-800 focus:outline-gray-600 h-12 rounded-lg w-[300px]"
-                id="OtherName"
-                type="text"
-                placeholder="Other name"
+                id="otherName"
+									type="text"
+									placeholder="otherName"
+									name="otherName"
+									value={formData.otherName}
+									onChange={(e) => {
+										const newObj = { ...formData, otherName: e.target.value };
+										setFormData(newObj);
+									  }}
+									required
               />
             </div>
             <div>
               <label
                 className="block font-semibold mb-2 dark:text-[#AAD5E1]"
-                htmlFor="Last Name"
+                htmlFor="lastName"
               >
                 Last Name
               </label>
               <input
                 className="dark:bg-slate-700 border-2 p-2 border-gray-500  text-gray-800 focus:outline-gray-600 h-12 rounded-lg w-[300px]"
-                id="Last Name"
-                type="text"
-                placeholder="last name"
+                id="lastName"
+									type="text"
+									placeholder="lastName"
+									name="lastName"
+									value={formData.lastName}
+									onChange={(e) => {
+										const newObj = { ...formData, lastName: e.target.value };
+										setFormData(newObj);
+									  }}
+									required
               />
             </div>
             <div>
@@ -104,8 +184,15 @@ function EmployeeCreation() {
               <input
                 className="dark:bg-slate-700 border-2 p-2 border-gray-500  text-gray-800 focus:outline-gray-600 h-12 rounded-lg w-[300px]"
                 id="dob"
-                type="Date"
-                placeholder=""
+									type="text"
+									placeholder="dob"
+									name="dob"
+									value={formData.dob}
+									onChange={(e) => {
+										const newObj = { ...formData, dob: e.target.value };
+										setFormData(newObj);
+									  }}
+									required
               />
             </div>
           </div>
@@ -118,6 +205,14 @@ function EmployeeCreation() {
                 Gender
               </label>
               <select
+               
+               name="gender"
+               value={formData.gender}
+               onChange={(e) => {
+                 const newObj = { ...formData, gender: e.target.value };
+                 setFormData(newObj);
+                 }}
+               required
                 id="gender"
                 className="border-2 p-2 border-gray-500  text-gray-800 focus:outline-gray-600 h-12  w-[300px] bg-gray-50  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-[#AAD5E1] dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
@@ -137,6 +232,13 @@ function EmployeeCreation() {
                 id="nrc"
                 type="text"
                 placeholder="1234/56/78"
+                name="nrc"
+               value={formData.nrc}
+               onChange={(e) => {
+                 const newObj = { ...formData, nrc: e.target.value };
+                 setFormData(newObj);
+                 }}
+               required
               />
             </div>
 
@@ -151,7 +253,14 @@ function EmployeeCreation() {
                 className="dark:bg-slate-700 border-2 p-2 border-gray-500  text-gray-800 focus:outline-gray-600 h-12 rounded-lg w-[300px]"
                 id="email"
                 type="text"
-                placeholder="email"
+                placeholder=""
+                name="email"
+               value={formData.email}
+               onChange={(e) => {
+                 const newObj = { ...formData, email: e.target.value };
+                 setFormData(newObj);
+                 }}
+               required
               />
             </div>
             <div>
@@ -166,6 +275,13 @@ function EmployeeCreation() {
                 id="qualification"
                 type="text"
                 placeholder="qualification"
+                name="qualification"
+               value={formData.qualification}
+               onChange={(e) => {
+                 const newObj = { ...formData, qualification: e.target.value };
+                 setFormData(newObj);
+                 }}
+               required
               />
             </div>
           </div>
@@ -183,6 +299,13 @@ function EmployeeCreation() {
                 id="job"
                 type="text"
                 placeholder="job title"
+                name="qualification"
+                value={formData.qualification}
+                onChange={(e) => {
+                  const newObj = { ...formData, qualification: e.target.value };
+                  setFormData(newObj);
+                  }}
+                required
               />
             </div>
             <div>
@@ -193,6 +316,13 @@ function EmployeeCreation() {
                 Department
               </label>
               <select
+              name="dept"
+              value={formData.dept}
+              onChange={(e) => {
+                const newObj = { ...formData, dept: e.target.value };
+                setFormData(newObj);
+                }}
+              required
                 id="gender"
                 className="border-2 p-2 border-gray-500  text-gray-800 focus:outline-gray-600 h-12  w-[300px] bg-gray-50  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-[#AAD5E1] dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
@@ -213,6 +343,13 @@ function EmployeeCreation() {
                 id="station"
                 type="text"
                 placeholder="station"
+                name="station"
+                value={formData.station}
+                onChange={(e) => {
+                  const newObj = { ...formData, station: e.target.value };
+                  setFormData(newObj);
+                  }}
+                required
               />
             </div>
             <div>
@@ -227,6 +364,13 @@ function EmployeeCreation() {
                 id="gn"
                 type="text"
                 placeholder="gn0001"
+                name="gn"
+                value={formData.gn}
+                onChange={(e) => {
+                  const newObj = { ...formData, gn: e.target.value };
+                  setFormData(newObj);
+                  }}
+                required
               />
             </div>
           </div>
@@ -244,6 +388,13 @@ function EmployeeCreation() {
                 id="date"
                 type="Date"
                 placeholder=""
+                name="date"
+                value={formData.date}
+                onChange={(e) => {
+                  const newObj = { ...formData, date: e.target.value };
+                  setFormData(newObj);
+                  }}
+                required
               />
             </div>
             <div>
@@ -254,6 +405,13 @@ function EmployeeCreation() {
                 Salary Grade
               </label>
               <select
+              name="grade"
+              value={formData.grade}
+              onChange={(e) => {
+                const newObj = { ...formData, grade: e.target.value };
+                setFormData(newObj);
+                }}
+              required
                 id="gender"
                 className=" border-2 p-2 border-gray-500  text-gray-800 focus:outline-gray-600 h-12  w-[300px] bg-gray-50  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-[#AAD5E1] dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
@@ -265,13 +423,20 @@ function EmployeeCreation() {
             <div>
               <label
                 className="block font-semibold mb-2 dark:text-[#AAD5E1]"
-                htmlFor="doc"
+                htmlFor="docType"
               >
                 Document Type
               </label>
               <select
+              name="docType"
+              value={formData.docType}
+              onChange={(e) => {
+                const newObj = { ...formData, docType: e.target.value };
+                setFormData(newObj);
+                }}
+              required
                 
-                id="doc"
+                id="docType"
                 className="border-2 p-2 border-gray-500  text-gray-800 focus:outline-gray-600 h-12  w-[300px] bg-gray-50  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-[#AAD5E1] dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                  {documents.map((item, i) => (
@@ -293,10 +458,16 @@ function EmployeeCreation() {
                 className="dark:bg-slate-700 p-2  text-gray-800  rounded-lg w-[300px] dark:text-[#AAD5E1]"
                 id="upload"
                 type="file"
-                placeholder="gn0001"
+                name="upload"
+                value={formData.upload}
+                onChange={(e) => {
+                  const newObj = { ...formData, upload: e.target.value };
+                  setFormData(newObj);
+                  }}
+                required
               />
             </div>
-          </div>
+          </div></div>
         </form>
         <Box sx={{ mt: 2, padding: 3, borderRadius: "30px" }} >
           <TableContainer component={Paper} elevation={1}>
@@ -337,7 +508,7 @@ function EmployeeCreation() {
         </div>
         <div>
           <Link to="employeeDetails">
-          <button className="bg-[#549B69] text-sm text-white h-12 w-[200px] rounded-md">
+          <button type="button"  className="bg-[#549B69] text-sm text-white h-12 w-[200px] rounded-md">
             Create
           </button>
           </Link>

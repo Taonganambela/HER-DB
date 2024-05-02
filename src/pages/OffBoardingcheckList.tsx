@@ -1,6 +1,40 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+
+
 function OffBoardingcheckList() {
+
+	const [formData, setFormData] = useState({
+		employeeName :"",
+		gn :"",
+		dayofservice :"",
+		email :"",
+		residentiolAddress :"",
+		mobileNumbers :"",
+		nextOfKinName :"",
+		nextofKinNumber :"",
+		department :"",
+		LineManagersName :"",
+		Check1:"",
+		Check2:"",
+		Check3:"",
+		Check4:"",
+		Check5:"",
+		Check6:"",
+		Check7:"",
+		other1:"",
+		check11:"",
+		check12:"",
+		check13:"",
+		check14:"",
+		check15:"",
+		check16:"",
+		check17:"",
+		other2:"",
+		Managersname:"",
+	});
+
 	return (
 		<div className="dark:bg-bkgSecondary dark:text-content p-8 w-full overflow-y-auto">
 			<div className="flex ml-auto items-center justify-between w-full">
@@ -33,6 +67,16 @@ function OffBoardingcheckList() {
 									id="Employee Name"
 									type="text"
 									placeholder="Employee Name"
+									name="employeeName"
+									value={formData.employeeName}
+									onChange={(e) => {
+										const newObj = {
+											...formData,
+											employeeName: e.target.value,
+										};
+										setFormData(newObj);
+									}}
+									required
 								/>
 							</div>
 
@@ -48,6 +92,16 @@ function OffBoardingcheckList() {
 									id="GN"
 									type="text"
 									placeholder="GN"
+									name="gn"
+								value={formData.gn}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										gn: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								required
 								/>
 							</div>
 
@@ -63,6 +117,16 @@ function OffBoardingcheckList() {
 									id="Last Day of Service"
 									type="text"
 									placeholder="Last Day of Service"
+									name="dayofservice"
+								value={formData.dayofservice}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										dayofservice: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								required
 								/>
 							</div>
 							<div>
@@ -77,6 +141,16 @@ function OffBoardingcheckList() {
 									id="Email Address"
 									type="Email"
 									placeholder="Email Address"
+									name="email"
+								value={formData.email}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										email: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								required
 								/>
 							</div>
 						</div>
@@ -94,6 +168,16 @@ function OffBoardingcheckList() {
 									id="Mobile Numbers"
 									type="text"
 									placeholder="Mobile Numbers"
+									name="mobileNumbers"
+								value={formData.mobileNumbers}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										mobileNumbers: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								required
 								/>
 							</div>
 
@@ -109,6 +193,16 @@ function OffBoardingcheckList() {
 									id="Residential Addresss"
 									type="text"
 									placeholder="Residential Addresss"
+									name="residentiolAddress"
+								value={formData.residentiolAddress}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										residentiolAddress: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								required
 								/>
 							</div>
 
@@ -124,6 +218,16 @@ function OffBoardingcheckList() {
 									id="Next of Kin (Name)"
 									type="text"
 									placeholder="Next of Kin (Name)"
+									name="nextOfKinName"
+								value={formData.nextOfKinName}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										nextOfKinName: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								required
 								/>
 							</div>
 							<div>
@@ -138,6 +242,16 @@ function OffBoardingcheckList() {
 									id="Mobile Number(Next of kin)"
 									type="text"
 									placeholder="Mobile Number(Next of kin)"
+									name="nextofKinNumber"
+								value={formData.nextofKinNumber}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										nextofKinNumber: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								required
 								/>
 							</div>
 						</div>
@@ -155,20 +269,40 @@ function OffBoardingcheckList() {
 									id="Department"
 									type="text"
 									placeholder="Department"
+									name="department"
+								value={formData.department}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										department: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								required
 								/>
 							</div>
 							<div>
 								<label
 									className="block font-semibold mb-2 dark:text-[#AAD5E1]"
-									htmlFor="Department"
+									htmlFor="LineManagersNAme"
 								>
-									Department
+									Line Managers Name
 								</label>
 								<input
 									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-12 rounded-lg w-[250px]"
-									id="Department"
+									id="LineManagersNAme"
 									type="text"
-									placeholder="Department"
+									placeholder="line managers name"
+									name="DLineManagersName"
+								value={formData.LineManagersName}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										LineManagersName: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								required
 								/>
 							</div>
 						</div>
@@ -210,8 +344,6 @@ function OffBoardingcheckList() {
 								The following items must be submitted to the department designee prior to the employee’s last working day in the Company:
 								</h4>
 							</div>
-
-
 						<div className="flex-col space-x-6 p-3 mt-4 mb-4 text-center">
 							
 							
@@ -220,9 +352,19 @@ function OffBoardingcheckList() {
 							<div className="flex pl-6">
 								
 								<input
-									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2 rounded-lg w-[50px]"
 									id="Medical Scheme Membership card"
 									type="checkbox"
+									name="Check1"
+								value={formData.Check1}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										Check1: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								
 								/><label
 									className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 									htmlFor="Medical Scheme Membership card"
@@ -235,9 +377,19 @@ function OffBoardingcheckList() {
 							<div className="flex">
 								
 								<input
-									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2  rounded-lg w-[50px]"
 									id="Employee Identity Cards/Badges"
 									type="checkbox"
+									name="Check2"
+									value={formData.Check2}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										Check2: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								
 								/><label
 									className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 									htmlFor="Employee Identity Cards/Badges"
@@ -252,9 +404,19 @@ function OffBoardingcheckList() {
 							<div className="flex">
 								
 								<input
-									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2  rounded-lg w-[50px]"
 									id="Keys"
 									type="checkbox"
+									name="Check3"
+									value={formData.Check3}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										Check3: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								required
 								/><label
 									className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 									htmlFor="Keys"
@@ -265,9 +427,19 @@ function OffBoardingcheckList() {
 							<div className="flex">
 								
 								<input
-									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2  rounded-lg w-[50px]"
 									id="Access / Swipe card(s)"
 									type="checkbox"
+									name="Check4"
+									value={formData.Check4}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										Check4: e.target.value,
+									};
+									setFormData(newObj);
+								}}
+								
 								/><label
 									className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 									htmlFor="Access / Swipe card(s)"
@@ -279,9 +451,18 @@ function OffBoardingcheckList() {
 							<div className="flex">
 								
 								<input
-									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2  rounded-lg w-[50px]"
 									id="Purchasing card(s)"
 									type="checkbox"
+									name="Check5"
+									value={formData.Check5}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										Check5: e.target.value,
+									};
+									setFormData(newObj);
+								}}
 								/><label
 									className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 									htmlFor="Purchasing card(s)"
@@ -292,9 +473,18 @@ function OffBoardingcheckList() {
 							<div className="flex">
 								
 								<input
-									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2  rounded-lg w-[50px]"
 									id="out Standing expense reimbursements"
 									type="checkbox"
+									name="Check6"
+									value={formData.Check6}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										Check6: e.target.value,
+									};
+									setFormData(newObj);
+								}}
 								/><label
 									className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 									htmlFor="out Standing expense reimbursements"
@@ -305,10 +495,19 @@ function OffBoardingcheckList() {
 							<div className="flex">
 								
 								<input
-									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+									className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2  rounded-lg w-[50px]"
 									id="Company property/Equipment (eg,)"
 									type="checkbox"
 									placeholder="Line Managers Name"
+									name="Check7"
+									value={formData.Check7}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										Check7: e.target.value,
+									};
+									setFormData(newObj);
+								}}
 								/><label
 									className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 									htmlFor="Company property/Equipment (eg,)"
@@ -332,6 +531,15 @@ function OffBoardingcheckList() {
 									id="Company"
 									type="text"
 									placeholder="other"
+									name="other1"
+									value={formData.other1}
+								onChange={(e) => {
+									const newObj = {
+										...formData,
+										other1: e.target.value,
+									};
+									setFormData(newObj);
+								}}
 								/>
 								</div>
 							</div>
@@ -406,9 +614,18 @@ function OffBoardingcheckList() {
 	<div className="flex pl-6">
 		
 		<input
-			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2  rounded-lg w-[50px]"
 			id="Return files and/or Documents to the department designee"
 			type="checkbox"
+			name="check11"
+			value={formData.check11}
+			onChange={(e) => {
+			const newObj = {
+			...formData,
+			check11: e.target.value,
+			};
+			setFormData(newObj);
+		}}
 		/><label
 			className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 			htmlFor="Return files and/or Documents to the department designee"
@@ -421,9 +638,18 @@ function OffBoardingcheckList() {
 	<div className="flex">
 		
 		<input
-			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2  rounded-lg w-[50px]"
 			id="Schedule Exit interview with a Human Resource representstive"
 			type="checkbox"
+			name="check12"
+			value={formData.check12}
+			onChange={(e) => {
+			const newObj = {
+			...formData,
+			check12: e.target.value,
+			};
+			setFormData(newObj);
+		}}
 		/><label
 			className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 			htmlFor="Schedule Exit interview with a Human Resource representstive"
@@ -438,9 +664,18 @@ function OffBoardingcheckList() {
 	<div className="flex">
 		
 		<input
-			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2  rounded-lg w-[50px]"
 			id="Consult with compensaton & Benefits Manager for the benefits inquiries"
 			type="checkbox"
+			name="check13"
+			value={formData.check13}
+			onChange={(e) => {
+			const newObj = {
+			...formData,
+			check13: e.target.value,
+			};
+			setFormData(newObj);
+		}}
 		/><label
 			className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 			htmlFor="Consult with compensaton & Benefits Manager for the benefits inquiries"
@@ -451,9 +686,18 @@ function OffBoardingcheckList() {
 	<div className="flex">
 		
 		<input
-			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2  rounded-lg w-[50px]"
 			id="Submit completed employee clearnce Form for signatures, and hand in to hand "
 			type="checkbox"
+			name="check14"
+			value={formData.check14}
+			onChange={(e) => {
+			const newObj = {
+			...formData,
+			check14: e.target.value,
+			};
+			setFormData(newObj);
+		}}
 		/><label
 			className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 			htmlFor="Submit completed employee clearance Form for signatures, and hand in to hand in to Human Resorces and Administrative Department "
@@ -465,9 +709,18 @@ function OffBoardingcheckList() {
 	<div className="flex">
 		
 		<input
-			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2  rounded-lg w-[50px]"
 			id="Clear telephone Access"
 			type="checkbox"
+			name="check15"
+			value={formData.check15}
+			onChange={(e) => {
+			const newObj = {
+			...formData,
+			check15: e.target.value,
+			};
+			setFormData(newObj);
+		}}
 		/><label
 			className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 			htmlFor="Clear telephone Access"
@@ -478,9 +731,18 @@ function OffBoardingcheckList() {
 	<div className="flex">
 		
 		<input
-			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-6 rounded-lg w-[50px]"
+			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-3 mt-2 rounded-lg w-[50px]"
 			id="Update and/or confirm current contact information"
 			type="checkbox"
+			name="check16"
+			value={formData.check16}
+			onChange={(e) => {
+			const newObj = {
+			...formData,
+			check16: e.target.value,
+			};
+			setFormData(newObj);
+		}}
 		/><label
 			className="block font-semibold mb-2 dark:text-[#AAD5E1]"
 			htmlFor="Update and/or confirm current contact information"
@@ -505,6 +767,15 @@ function OffBoardingcheckList() {
 			id="Company"
 			type="text"
 			placeholder="other"
+			name="other2"
+			value={formData.other2}
+			onChange={(e) => {
+			const newObj = {
+			...formData,
+			other2: e.target.value,
+			};
+			setFormData(newObj);
+		}}
 		/>
 		</div>
 	</div>
@@ -525,7 +796,16 @@ function OffBoardingcheckList() {
 			className="border-2 p-2 border-gray-500  dark:bg-slate-700 focus:outline-gray-600 h-12 rounded-lg w-[450px]"
 			id="Company"
 			type="text"
-			placeholder="Line manager/ Head of department"
+			placeholder="e.g. Micheal Symalala (IT Manager)"
+			name="Managersname"
+			value={formData.Managersname}
+			onChange={(e) => {
+			const newObj = {
+			...formData,
+			Managersname: e.target.value,
+			};
+			setFormData(newObj);
+		}}
 		/>
 		</div>
 	</div>
@@ -546,11 +826,13 @@ document to verify that all Company property has been handed over.
 </h4>
 	</div>
 
-
-
-
-
 					</form>
+
+
+
+
+
+
 				</div>
 			</div>
 			<div className="center-items justify-center flex mt-0">

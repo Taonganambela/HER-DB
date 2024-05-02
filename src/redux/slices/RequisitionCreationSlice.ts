@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 export interface RequisitionCreationI {
-	    department: String;
+	  department: String;
 		section: String;
 		jobTitle: String;
 		jobPosition:String;
@@ -43,7 +43,7 @@ const initialState: RequisitionCreationI = {
     requisitionedBy:"",
 }
 
-export const RequisitionCreationSlice = createSlice({
+export const RequisitionCreationSlice = createSlice ({
     name: "RequisitionCreation",
     initialState,
     reducers: {

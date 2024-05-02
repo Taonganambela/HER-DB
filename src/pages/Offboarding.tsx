@@ -101,6 +101,8 @@ function Offboarding() {
         pagination
         columns={columns}
         data={data}
+        selectableRows
+        fixedHeader
       />
     </div>
   );

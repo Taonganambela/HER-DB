@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 function EmployeeDetails() {
   return (
-    <div className="dark:bg-bkgSecondary dark:text-content h-content p-8 w-full ">
+    <div className="dark:bg-bkgSecondary dark:text-content h-screen p-8 w-full ">
       <h1 className="font-semibold text-2xl text-gray-600 mb-3 dark:text-slate-300 ">
         Onboarding
       </h1>

@@ -6,6 +6,7 @@ import uploadImg from "../../assets/cloud-upload-regular-240.png";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
+import axios from "axios"
 
 interface DragDropFileProps {
 	onFileChange: (fileList: File[]) => void;
@@ -42,6 +43,26 @@ const DragDropFile: React.FC<DragDropFileProps> = (props) => {
 		}
 	};
 
+	const uploadFiles = async () => {
+		try {
+			const formData = new FormData();
+			fileList.forEach((file) => {
+				formData.append("files", file);
+			});
+			await axios.post("your_backend_url_here", formData, {
+				headers: {
+					"Content-Type": "multipart/form-data",
+				},
+			});
+			// Optionally, perform any actions after successful upload
+			console.log("Files uploaded successfully!");
+		} catch (error) {
+			console.error("Error uploading files:", error);
+			// Optionally, handle errors
+		}
+	};
+	
+
 	return (
 		<div className="dark:bg-bkgSecondary dark:text-content p-8 w-full h-screen">
 			<div className="flex ml-auto items-center justify-between w-full mb-8">
@@ -53,18 +74,14 @@ const DragDropFile: React.FC<DragDropFileProps> = (props) => {
 			</div>
 
 
-			<div className="bg-white rounded-md dark:bg-slate-900 pb-1">
+			<div className="bg-white rounded-md dark:bg-slate-900 pb-2 ">
 				<div className="bg-[#549B69] text-white py-2 text-md font-semibold rounded-t-lg flex w-full justify-evenly">
 					<h2 className="text-left w-full p-2 pl-3 text-xl">
 						Submit Resignation
 					</h2>
 				</div>
 
-
-
-
-
-				<div className="center-items justify-center flex mt-3 mb-3 ">
+				<div className="center-items justify-center flex mt-5 mb-3">
 					<div className="drop-file-input__label border-4 border-gray-800 dark:border-white rounded-lg border-dashed w-[400px]">
 						<div className="text-center center-items justify-center flex mt-2">
 							<div

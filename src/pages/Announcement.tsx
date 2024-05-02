@@ -3,7 +3,7 @@ import Announcements from "../components/Announcements";
 
 function Announcement() {
   return (
-    <div className="dark:bg-bkgSecondary dark:text-content max-h-fit pb-20 p-8 w-full ">
+    <div className="dark:bg-bkgSecondary dark:text-content h-screen pb-20 p-8 w-full ">
       <div className="flex ml-auto items-center justify-between w-full">
         <h1 className="font-semibold text-2xl text-gray-600 mb-3 dark:text-slate-300 ">
           Announcements

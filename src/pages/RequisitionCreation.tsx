@@ -108,6 +108,7 @@ function RequisitionCreation() {
 										const newObj = { ...formData, department: e.target.value };
 										setFormData(newObj);
 									  }}
+									
 								/>
 							</div>
 
