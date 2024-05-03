@@ -1,9 +1,18 @@
+import { useRef } from "react";
+import generateRef from 'react-to-pdf'
+
 function OnboardingPlan() {
+	const targetRef = useRef();
 	return (
+		
 		<div className="dark:bg-bkgSecondary dark:text-content h-content p-8 w-full">
+		
+			
 			<h1 className="font-semibold text-2xl text-gray-600 mb-3 dark:text-slate-300 ">
 				Onboarding Plan
 			</h1>
+			{/* tsx Error */}
+			<div ref={targetRef}>
 			<div className="bg-white rounded-md dark:bg-slate-900">
 				<div className="border-l border-l-gray-300 bg-green-600 text-white py-2 text-md font-semibold rounded-t-lg flex w-full justify-evenly">
 					<h2 className="flex-[0.25] text-center  flex-wrap p-1 ">
@@ -298,10 +307,10 @@ employment probation.
   NOTE: <span className="font-normal"> The respective Head of Department or Line Manager to the employee shall be responsible for
 planning and implementing the Employee Onboarding Plan</span>
   </h2>
-</div>
+</div></div>
 
 			<div className="center-items justify-center flex">
-				<button className="mb-8 text-center bg-green-700 text-white h-14 w-[130px] rounded-md mt-4">
+				<button onClick={() => generateRef (targetRef ,{filename:'Page.pdf'})} className="mb-8 text-center bg-green-700 text-white h-14 w-[130px] rounded-md mt-4">
 					Download
 				</button>
 			</div>

@@ -75,12 +75,19 @@ function FileCheckList() {
 			<div className="flex ml-auto items-center justify-between w-full">
 				<div className="flex">
 					<h1 className="font-semibold text-2xl text-gray-600 mb-3 dark:text-slate-300 ">
-						Personal File FileCheckList
+						Onboarding
 					</h1>
 				</div>
 				<br />
 			</div>
-			<Box sx={{ mt: 2,borderRadius: "30px" }}>
+
+			<div className="bg-white rounded-md dark:bg-slate-900">
+				<div className="bg-[#549B69] text-white py-2 text-md font-semibold rounded-t-lg flex w-full justify-evenly">
+					<h2 className="text-left w-full p-2 text-xl">
+						Personal file checklist
+					</h2>
+				</div>
+			<Box sx={{ mt: 0,borderRadius: "30px" }}>
 				<TableContainer component={Paper} elevation={1}>
 					<Table className="table-auto ">
 						<TableHead className="bg-gray-200">
@@ -130,6 +137,7 @@ function FileCheckList() {
 					</Table>
 				</TableContainer>
 			</Box>
+			</div>
 
 			<div>
 				<div className="mt-10 mx-20 pb-10 space-y-3 ">

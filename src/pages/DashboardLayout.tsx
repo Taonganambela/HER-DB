@@ -237,13 +237,13 @@ function DashboardLayout({ Component }: DashboardLayoutProps) {
 			<div className="w-[79%] fixed top-0  right-0 md:w-[78%] md:fixed md:top-0 md:right-0">
 				<div className="flex justify-between py-6 border-b-2 dark:border-b-[#202e3c] dark:bg-[#202e3c]">
 					<div className="flex items-center space-x-8 px-2 mr-4">
-						<div className=" hidden absolute top rounded-xl dark:bg-bkg text-gray-500 border border-green-500 dark:border-green-500 h-9 md:rounded-xl md:dark:bg-bkg md:text-gray-500 md:border md:border-green-500 md:dark:border-green-500">
+						<div className="  absolute  rounded-xl dark:bg-bkg text-gray-500 border border-green-500 dark:border-green-500 h-9 md:rounded-xl md:dark:bg-bkg md:text-gray-500 md:border md:border-green-500 md:dark:border-green-500">
 							<IconButton>
-								<SearchIcon className="dark:text-content" />
+								<SearchIcon className="dark:text-content " />
 							</IconButton>
 							<input
 								type="text"
-								className="p-2 w-64 rounded-xl dark:bg-bkg dark:text-content focus:outline-none hover:outline-none focus:border-green-500 px-4 py-2"
+								className="p-2 w-64 rounded-xl dark:bg-bkg dark:text-content focus:outline-none hover:outline-none focus:border-green-500 px-4 py-1"
 								placeholder="Search"
 							/>
 						</div>
@@ -270,11 +270,11 @@ function DashboardLayout({ Component }: DashboardLayoutProps) {
 									<h2 className=" font-semibold  dark:text-gray-400 text-gray-700">
 										Nahshon Kampamba
 									</h2>
-								</button>
-								<h3 className="text-gray-600 dark:text-gray-400">
-									Software Developer
-								</h3>
 
+									<h3 className="text-gray-600 dark:text-gray-400">
+										Software Developer
+									</h3>
+								</button>
 								<div className="dark:bg-slate-900">
 									<Menu
 										id="basic-menu"

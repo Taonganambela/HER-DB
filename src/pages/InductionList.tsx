@@ -4,8 +4,8 @@ import BackgroundLetterAvatars from "../components/Avatar";
 import SendIcon from "@mui/icons-material/Send";
 
 interface Task {
-  name: string;
-  category: string;
+	name: string;
+	category: string;
 }
 
 const style = {
@@ -20,111 +20,145 @@ const style = {
 };
 
 export function InductionList() {
-
 	const [open, setOpen] = useState(false);
 	const handleClose = () => setOpen(false);
-  const [tasks, setTasks] = useState<Task[]>([
-    { name: 'Brief history of the company', category: 'INTRODUCTION' },
-    { name: ' Vision', category: 'INTRODUCTION' },
-    { name: 'Mission', category: 'INTRODUCTION' },
-    { name: 'Values', category: 'INTRODUCTION' },
-	{ name: 'Organization overview', category: 'INTRODUCTION' },
+	const [tasks, setTasks] = useState<Task[]>([
+		{ name: "Brief history of the company", category: "INTRODUCTION" },
+		{ name: " Vision", category: "INTRODUCTION" },
+		{ name: "Mission", category: "INTRODUCTION" },
+		{ name: "Values", category: "INTRODUCTION" },
+		{ name: "Organization overview", category: "INTRODUCTION" },
 
-    { name: 'Hours of work', category: 'CONDITIONS OF SERVICE' },
-    { name: 'Medical scheme', category: 'CONDITIONS OF SERVICE' },
-    { name: 'Arrangements for requesting leave(annual Laeve, Unpaid Leave, Compassionate leave)', category: 'CONDITIONS OF SERVICE' },
-	{ name: 'Probation periods of employment', category: 'CONDITIONS OF SERVICE' },
-    { name: 'notice of termination of employment', category: 'CONDITIONS OF SERVICE' },
-    { name: 'Grievance procedure', category: 'CONDITIONS OF SERVICE' },
-    { name: 'Disciplinary procedure', category: 'CONDITIONS OF SERVICE' },
-	{ name: 'Confidentiality', category: 'CONDITIONS OF SERVICE' },
-    { name: 'Policies, Processes and Procedure', category: 'CONDITIONS OF SERVICE' },
+		{ name: "Hours of work", category: "CONDITIONS OF SERVICE" },
+		{ name: "Medical scheme", category: "CONDITIONS OF SERVICE" },
+		{
+			name: "Arrangements for requesting leave(annual Laeve, Unpaid Leave, Compassionate leave)",
+			category: "CONDITIONS OF SERVICE",
+		},
+		{
+			name: "Probation periods of employment",
+			category: "CONDITIONS OF SERVICE",
+		},
+		{
+			name: "notice of termination of employment",
+			category: "CONDITIONS OF SERVICE",
+		},
+		{ name: "Grievance procedure", category: "CONDITIONS OF SERVICE" },
+		{ name: "Disciplinary procedure", category: "CONDITIONS OF SERVICE" },
+		{ name: "Confidentiality", category: "CONDITIONS OF SERVICE" },
+		{
+			name: "Policies, Processes and Procedure",
+			category: "CONDITIONS OF SERVICE",
+		},
 
-    { name: 'Management of Company Assets', category: 'SECURITY' },
-    { name: 'Importance of I.D cards', category: 'SECURITY' },
-	{ name: 'Lost property procedure', category: 'SECURITY' },
+		{ name: "Management of Company Assets", category: "SECURITY" },
+		{ name: "Importance of I.D cards", category: "SECURITY" },
+		{ name: "Lost property procedure", category: "SECURITY" },
+
+		{
+			name: "Means of advancement, promotion opportunities",
+			category: "TRAINING",
+		},
+		{ name: "Employee appraisal, review systems", category: "TRAINING" },
+		{ name: "Study leave", category: "TRAINING" },
+		{ name: "Performance Management System", category: "TRAINING" },
+
+		{
+			name: "Give details of any meeting he/she is expected to attend.",
+			category: "MISCELLANIOUS",
+		},
+	]);
+	const [completedTasks, setCompletedTasks] = useState<Task[]>([]);
+
+	const moveTaskToCompleted = (taskIndex: number) => {
+		const updatedTasks = [...tasks];
+		const completedTask = updatedTasks.splice(taskIndex, 1);
+		setTasks(updatedTasks);
+		setCompletedTasks([...completedTasks, completedTask[0]]);
+	};
+
+	const moveTaskToTasks = (taskIndex: number) => {
+		const updatedCompletedTasks = [...completedTasks];
+		const taskToMove = updatedCompletedTasks.splice(taskIndex, 1);
+		setCompletedTasks(updatedCompletedTasks);
+		setTasks([...tasks, taskToMove[0]]);
+	};
+
+	return (
 
 
-    { name: 'Means of advancement, promotion opportunities', category: 'TRAINING' },
-    { name: 'Employee appraisal, review systems', category: 'TRAINING' },
-    { name: 'Study leave', category: 'TRAINING' },
-	{ name: 'Performance Management System', category: 'TRAINING' },
 
 
-    { name: 'Give details of any meeting he/she is expected to attend.', category: 'MISCELLANIOUS' },
-
-  ]);
-  const [completedTasks, setCompletedTasks] = useState<Task[]>([]);
-
-  const moveTaskToCompleted = (taskIndex: number) => {
-    const updatedTasks = [...tasks];
-    const completedTask = updatedTasks.splice(taskIndex, 1);
-    setTasks(updatedTasks);
-    setCompletedTasks([...completedTasks, completedTask[0]]);
-  };
-
-  const moveTaskToTasks = (taskIndex: number) => {
-    const updatedCompletedTasks = [...completedTasks];
-    const taskToMove = updatedCompletedTasks.splice(taskIndex, 1);
-    setCompletedTasks(updatedCompletedTasks);
-    setTasks([...tasks, taskToMove[0]]);
-  };
-
-  return (
-
-	<div className="dark:bg-bkgSecondary dark:text-content max-h-fit pb-20 p-8 w-full">
-		
+		<div className="dark:bg-bkgSecondary dark:text-content max-h-fit pb-20 p-8 w-full">
 			<div className="flex ml-auto items-center justify-between w-full">
 				<div className="flex">
 					<h1 className="font-semibold text-2xl text-gray-600 mb-3 dark:text-slate-300 ">
-						Personal Orientation CheckList
+						Onboarding
 					</h1>
 				</div>
 				<br />
 			</div>
-    <div className="flex justify-center mt-8 mb-8">
 
-
-		
-      <div className="grid grid-cols-2 ">
-		{/* div for tasks */}
-        <div className="border-2 rounded-l-md">
-          <h2 className="text-lg font-semibold mb-4 border-b-2 border-b-gray-300 h-10 text-center">Activity</h2>
-          {tasks.map((task, index) => (
-            <div key={index} className="text-sm pl-3">
-              {index === 0 || tasks[index - 1].category !== task.category ? (
-                <h3 className="text-md font-semibold mb-2">{task.category}</h3>
-              ) : null}
-              <div
-                className="cursor-pointer hover:text-green-600 rounded p-2"
-                onClick={() => moveTaskToCompleted(index)}
-              >
-                {task.name}
-              </div>
-            </div>
-          ))}
-        </div>
-		{/* div for completed tasks */}
-        <div className="border-2 rounded-r-md">
-          <h2 className="text-lg font-semibold mb-4 border-b-2 border-b-gray-300 h-10 text-center">Completed Activity</h2>
-          {completedTasks.map((task, index) => (
-            <div key={index}  className="text-sm pl-3">
-              {index === 0 || completedTasks[index - 1].category !== task.category ? (
-                <h3 className="text-md font-semibold mb-2">{task.category}</h3>
-              ) : null}
-              <div
-                className="cursor-pointer hover:text-green-200 rounded p-2"
-                onClick={() => moveTaskToTasks(index)}
-              >
-                {task.name}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-	
-	<div>
+			<div className="bg-white rounded-md dark:bg-slate-900 pb-0">
+				<div className="bg-[#549B69] text-white py-2 text-md font-semibold rounded-t-lg flex w-full justify-evenly">
+					<h2 className="text-left w-full p-2 text-xl">
+					Induction CheckList
+					</h2>
+				</div>
+				<div className="flex justify-center mt-0 mb-0">
+					<div className="grid grid-cols-2 ">
+						{/* div for tasks */}
+						<div className="border-1 border-r-2">
+							<h2 className="text-lg font-semibold mb-4 border-b-2 border-b-gray-300 h-10 text-center">
+								Activity
+							</h2>
+							{tasks.map((task, index) => (
+								<div key={index} className="text-sm pl-3">
+									{index === 0 ||
+									tasks[index - 1].category !==
+										task.category ? (
+										<h3 className="text-md font-semibold mb-2">
+											{task.category}
+										</h3>
+									) : null}
+									<div
+										className="cursor-pointer hover:text-green-600 rounded p-2"
+										onClick={() =>
+											moveTaskToCompleted(index)
+										}
+									>
+										{task.name}
+									</div>
+								</div>
+							))}
+						</div>
+						{/* div for completed tasks */}
+						<div className="border-1 ">
+							<h2 className="text-lg font-semibold mb-4 border-b-2 border-b-gray-300 h-10 text-center">
+								Completed Activity
+							</h2>
+							{completedTasks.map((task, index) => (
+								<div key={index} className="text-sm pl-3">
+									{index === 0 ||
+									completedTasks[index - 1].category !==
+										task.category ? (
+										<h3 className="text-md font-semibold mb-2">
+											{task.category}
+										</h3>
+									) : null}
+									<div
+										className="cursor-pointer hover:text-green-200 rounded p-2"
+										onClick={() => moveTaskToTasks(index)}
+									>
+										{task.name}
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
 				<div className="mt-10 mx-20 pb-10 space-y-3 ">
 					<h4 className="text-slate-600 dark:text-slate-300">
 						Comment if you intend to decline the request
@@ -208,12 +242,10 @@ export function InductionList() {
 				</Modal>
 			</div>
 			<div>
-          
-		  <button className="bg-[#549B69] text-sm text-white h-14 w-[200px] rounded-md ">
-			Back
-		  </button>
-	   
-	  </div>
-	</div>
-  );
+				<button className="bg-[#549B69] text-sm text-white h-14 w-[200px] rounded-md ">
+					Back
+				</button>
+			</div>
+		</div>
+	);
 }
