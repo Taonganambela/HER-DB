@@ -1,5 +1,4 @@
 import DataTable, { createTheme } from "react-data-table-component";
-import FindInPageIcon from "@mui/icons-material/FindInPage";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../redux/hooks";
 import { selectThemeMode } from "../redux/slices/ThemeSwitcherSlice";

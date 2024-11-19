@@ -132,7 +132,7 @@ function convertArrayOfObjectsToCSV(array: OffboardingI[]) {
     let ctr = 0;
     keys.forEach((key) => {
       if (ctr > 0) result += columnDelimiter;
-		//  tsx Error
+		  // @ts-ignore
       result += item[key];
 
       ctr++;
